@@ -1,0 +1,97 @@
+body {
+	font-family: Arial, sans-serif;
+	max-width: 95%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+	animation: dropAnimation 1s ease-in-out;
+}
+
+.time {
+	text-align: center;
+	background-color: #EEF5FF;
+	white-space: nowrap;
+}
+
+@keyframes dropAnimation {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes glitchAnimation {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translate(-5px, 5px);
+	}
+	40% {
+		transform: translate(5px, -5px);
+	}
+	60% {
+		transform: translate(-5px, 5px);
+	}
+	80% {
+		transform: translate(5px, -5px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+h1:hover {
+	animation: glitchAnimation 1s infinite;
+}
+
+table {
+	width: 100%;
+	border-radius: 10px; /* Add border-radius property */
+}
+
+th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px; /* Add border-radius property */
+}
+
+th {
+	background-color: #EEF5FF;
+}
+
+th:empty{
+	background-color: transparent;
+	border: none;
+}
+
+td:empty{
+	background-color: #ffcccc;
+}
+
+td{
+	background-color: #B4D4FF;
+}
+
+td:hover:not(:empty):not(.time) {
+	animation: bounce 0.5s;
+	background-color: #86B6F6;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		transform: translateY(-10px) scale(1.2);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
